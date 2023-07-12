@@ -6,32 +6,36 @@
     <title>Event Bubbling</title>
     <style>
         #toolbar {
-            padding: 20px;
+            padding: 30px;
+            height: 2.5rem;
+            width: 100vw;
+            margin: -20px;
             border: 1px solid black;
             background-color: darkcyan;
+        }
+
+        #login-button {
+            padding: 5px;
+            height: 2.5rem;
+            width: 5rem;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+        #title {
+            float:right;
+            margin:10px
         }
     </style>
 </head>
 <body>
     <div id="toolbar">
-       <button id="ring-button">Ring Bell</button> 
+       <button id="login-button">Log In</button> 
+       <h1 id="title">Webpage Title</h1>
     </div>
     <script>
-        let button = document.getElementById("ring-button");
-        button.addEventListener("click", function (event) {
-            document.getElementById("main-text").innerHTML += "button clicked";
-            console.log("button clicked");
-            event.stopPropagation();
-        });
-        document.getElementById("toolbar").addEventListener("click", function (event) {
-            document.getElementById("main-text").innerHTML += "toolbar clicked";
-            console.log("toolbar clicked");
-        });
-        document.addEventListener("click", function (event) {
-            document.getElementById("main-text").innerHTML += "doc clicked";
-            console.log("document clicked");
-        });
+ 
     </script>
-    <p id="main-text">Hello there.</p>
 </body>
 </html>
